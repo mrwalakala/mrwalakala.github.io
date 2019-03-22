@@ -2,7 +2,6 @@
 layout: post
 title:  "Teamspace and demand, “Stage” field"
 date:   2019-03-08 21:05:20 +0100
-categories: [demand workbench, itbm, servicenow]
 ---
 
 We all agree that the field “Stage” on Idea/Demand and Project is appreciated by users, but if we use the [Teamspace feature][teamspace-feature] plugin it’s possible to have some trouble.

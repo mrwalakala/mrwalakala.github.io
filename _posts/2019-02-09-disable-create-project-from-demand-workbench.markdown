@@ -2,7 +2,6 @@
 layout: post
 title:  "Disable Create Project from Demand Workbench"
 date:   2019-02-09 15:24:20 +0100
-categories: jekyll update
 ---
 Officially there isn’t a way to customize Demand Workbench; this can be an issue if you need to stop the creation of artifacts from the context menù (like project or enhancement).
 
