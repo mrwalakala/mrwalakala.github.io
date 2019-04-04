@@ -34,6 +34,7 @@ Trigger the duration of the project recalculation => "Trigger recalculation"
 
 **Useful link**
 [Planning Console Admin Guide (HI)][planning-console-admin-guide]
+
 [Planning Console Client docs.servicenow.com][planning-console-docs-sn]
 
 [planning-console-admin-guide]: https://hi.service-now.com/kb_view.do?sys_kb_id=bc2122addb49ab08feb1a851ca961980&sysparm_rank=4&sysparm_tsqueryId=15e7fda4db956b805ed4a851ca96190f
