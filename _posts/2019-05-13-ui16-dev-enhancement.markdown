@@ -18,6 +18,7 @@ It also makes the field selection interface in the reports larger
 [Stylish Component][stylus-component]
 
 [Stylish Firefox][stylus-firefox]
+
 [Stylish Chrome][stylus-chrome]
 
 [stylus-firefox]: https://addons.mozilla.org/en-US/firefox/addon/styl-us/
