@@ -8,8 +8,12 @@ permalink: sn-ui16-dev-enhancement
 I don't think I'm the only one who believes that update set and application picker are ridiculously small.
 
 I created a small stylish addon to make them bigger, without installing something on ServiceNow instance
+
 ![update set picker](/assets/update_set_picker.png)
+
 It also makes the field selection interface in the reports larger
+
+
 
 [Stylish Component][stylus-component]
 
