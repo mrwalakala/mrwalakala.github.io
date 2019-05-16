@@ -25,14 +25,10 @@ github_username:  mrwalakala
 # Build settings
 markdown: kramdown
 theme: minima
+google_analytics: UA-132440084-1
 permalink: /:title
 plugins:
   - jekyll-feed
-  - jekyll-analytics
-
-jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UA-132440084-1      # Required - replace with your tracking id
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
