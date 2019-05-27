@@ -5,7 +5,7 @@ date:   2019-05-24 19:01:00 +0100
 permalink: duplicate-gliderecord
 ---
 
-A simple way for creating a new gliderecord from another one.
+A simple way to create a new gliderecord from another one.
 
 Please, look at the number 5 if you use the [autonumbering feature][sn-autonumbering]
 
@@ -22,8 +22,8 @@ function duplicateGlideRecord(tableName, sysID, fieldsToExclude) {
 }
 {% endhighlight %}
 
-Here some examples:
-The first with only two parameters (tablename and sys_id of source gliderecord)
+You'll find some examples here below.
+The first one with only two parameters (tablename and sys_id of source gliderecord)
 {% highlight javascript %}
 @example
 var table = 'incident';
@@ -33,7 +33,7 @@ clonedGR.insert();
 {% endhighlight %}
 
 
-The second add an array of fields that need to be excluded from duplication
+The second example adds an array of fields. These ones must be excluded from duplication
 {% highlight javascript %}
 var table = 'incident';
 var sysID = 'ed92e8d173d023002728660c4cf6a7bc';
