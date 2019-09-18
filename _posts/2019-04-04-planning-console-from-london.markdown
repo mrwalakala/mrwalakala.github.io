@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Planning console in London and Madrid"
+title:  "Planning console Client Side in New York"
 date:   2019-04-03 21:34:20 +0100
 permalink: planning-console-client-setup
 ---
@@ -14,7 +14,7 @@ The record that identifies the planning console has the entity field set to “P
 
 ![planning console enable](/assets/planning_console_client_setup_00.png)
 
-NB: It’s necessary to check the property "com.snc.project.fire_brs_from_planning_console". 
+It’s necessary to check the property "com.snc.project.fire_brs_from_planning_console". 
 If the property is set to true you’ll never able to use planning console client side
 
 
@@ -39,4 +39,4 @@ Trigger the duration of the project recalculation => "Trigger recalculation"
 [Planning Console Client docs.servicenow.com][planning-console-docs-sn]
 
 [planning-console-admin-guide]: https://hi.service-now.com/kb_view.do?sys_kb_id=bc2122addb49ab08feb1a851ca961980&sysparm_rank=4&sysparm_tsqueryId=15e7fda4db956b805ed4a851ca96190f
-[planning-console-docs-sn]: https://docs.servicenow.com/bundle/madrid-it-business-management/page/product/project-management/concept/client-side-planning-console.html
+[planning-console-docs-sn]: https://docs.servicenow.com/bundle/newyork-it-business-management/page/product/project-management/concept/client-side-planning-console.html
