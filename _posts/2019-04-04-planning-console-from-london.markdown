@@ -2,6 +2,7 @@
 layout: post
 title:  "Planning console Client Side in New York"
 date:   2019-04-03 21:34:20 +0100
+category: ["ServiceNow", "ITBM", "PPM", "Planning Console"]
 permalink: planning-console-client-setup
 ---
 

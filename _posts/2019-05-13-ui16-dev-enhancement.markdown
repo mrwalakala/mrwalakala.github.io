@@ -2,6 +2,7 @@
 layout: post
 title:  "UI16 Enhancement for ServiceNow Developer"
 date:   2019-05-13 19:10:54 +0100
+category: ["ServiceNow", "UI16", "Dev Enhancement"]
 permalink: sn-ui16-dev-enhancement
 ---
 

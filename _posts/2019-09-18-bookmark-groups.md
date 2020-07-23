@@ -2,6 +2,7 @@
 layout: post
 title:  "Bookmark Groups"
 date:   2019-09-18 19:39:45 +0100
+category: ["ServiceNow", "UI16"]
 permalink: bookmark-groups
 
 ---
