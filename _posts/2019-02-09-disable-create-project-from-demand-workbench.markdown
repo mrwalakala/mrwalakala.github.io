@@ -2,7 +2,7 @@
 layout: post
 title:  "Disable Create Project from Demand Workbench"
 date:   2019-02-09 15:24:20 +0100
-category: ["ServiceNow", "ITBM", "PPM", "Demand Workbench"]
+category: ["ServiceNow", "ITBM"]
 permalink: disable-create-project-from-demand-workbench
 ---
 Officially there isn’t a way to customize Demand Workbench; this can be an issue if you need to stop the creation of artifacts from the context menù (like project or enhancement).

@@ -2,7 +2,7 @@
 layout: post
 title:  "Call Of Duty Warzone Tracker"
 date:   2020-04-10 18:52:02 +0100
-category: ["ServiceNow", "Custom App", "Call Of Duty"]
+category: ["ServiceNow", "Custom App"]
 permalink: cod-warzone-tracker
 
 ---

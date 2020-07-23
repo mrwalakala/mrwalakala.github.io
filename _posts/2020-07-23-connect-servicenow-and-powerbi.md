@@ -2,7 +2,7 @@
 layout: post
 title:  "Connect ServiceNow and Power BI"
 date:   2020-07-23 17:04:05 +0100
-category: ["ServiceNow", "Power BI", "REST API"]
+category: ["ServiceNow", "Power BI"]
 permalink: connect-servicenow-and-powerbi
 
 ---
