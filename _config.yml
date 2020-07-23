@@ -37,6 +37,7 @@ plainwhite:
   dark_mode: false
   show_excerpts: true
   html_lang: "en"
+  portfolio_image:  "assets/portfolio.png"
 
   social_links:
     github: mrwalakala
