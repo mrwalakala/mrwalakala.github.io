@@ -41,7 +41,7 @@ In particular, by choosing the fields you can use dot-walking to get information
 For example, in case you want to get the incident table records but only have the number, opened_by and short_description fields this will be the call:
 
 {% highlight http %}
-https://allinancesrldemo1.service-now.com/api/now/table/incident?sysparm_fields=number%2Copened_by%2Cshort_description
+https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/incident?sysparm_fields=number%2Copened_by%2Cshort_description
 {% endhighlight %}
 
 
@@ -54,7 +54,7 @@ With this result:
       "number": "INC0000060",
       "short_description": "Unable to connect to email",
       "opened_by": {
-        "link": "https://allinancesrldemo1.service-now.com/api/now/table/sys_user/681ccaf9c0a8016400b98a06818d57c7",
+        "link": "https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/sys_user/681ccaf9c0a8016400b98a06818d57c7",
         "value": "681ccaf9c0a8016400b98a06818d57c7"
       }
     }
@@ -68,7 +68,7 @@ The "opened_by" field is a reference to the users table, so to show the value sh
 This will be the call:
 
 {% highlight http %}
-https://allinancesrldemo1.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_fields=number%2Copened_by%2Cshort_description
+https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_fields=number%2Copened_by%2Cshort_description
 {% endhighlight %}
 
 With the following result:
@@ -81,7 +81,7 @@ With the following result:
       "short_description": "Unable to connect to email",
       "opened_by": {
         "display_value": "Joe Employee",
-        "link": "https://allinancesrldemo1.service-now.com/api/now/table/sys_user/681ccaf9c0a8016400b98a06818d57c7"
+        "link": "https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/sys_user/681ccaf9c0a8016400b98a06818d57c7"
       }
     }
   ]
@@ -93,7 +93,7 @@ To avoid that opened_by is then seen in Power BI as a record we can use the para
 Call:
 
 {% highlight http %}
-https://allinancesrldemo1.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_exclude_reference_link=true&sysparm_fields=number%2Copened_by%2Cshort_description 
+https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_exclude_reference_link=true&sysparm_fields=number%2Copened_by%2Cshort_description 
 {% endhighlight %}
 
 
@@ -126,7 +126,7 @@ To this:
 And made the call
 
 {% highlight http %}
-https://allinancesrldemo1.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_exclude_reference_link=true&sysparm_fields=number%2Copened_by%2Copened_by.email%2Cshort_description 
+https://YOUR-SERVICENOW-INSTANCE.service-now.com/api/now/table/incident?sysparm_display_value=true&sysparm_exclude_reference_link=true&sysparm_fields=number%2Copened_by%2Copened_by.email%2Cshort_description 
 {% endhighlight %}
 
 
