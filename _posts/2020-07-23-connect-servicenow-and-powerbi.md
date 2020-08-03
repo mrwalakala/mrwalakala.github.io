@@ -29,7 +29,7 @@ After the loading ServiceNow will show us the call (highlighted in blue in the s
 
 And a preview of the answer
 
-<img src="/assets/connect-servicenow-and-powerbi-02.png" alt="servicenow rest response" width="75%"/>
+<img src="/assets/connect-servicenow-and-powerbi-02.png" alt="servicenow rest response" width="35%"/>
 
 
 *In-depth information*:
