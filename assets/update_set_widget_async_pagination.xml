@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2020-08-04 16:59:00">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>Contains an example of a client-side paginated html tr element (widget "ngrepeat pagination async")</description>
+<inserted/>
+<name>Service Portal TR pagination async</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>5ae7db671b5a1c100f7d4196bc4bcb33</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>0172e3a31b9a1c100f7d4196bc4bcbcc</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_17f79f671b5a1c100f7d4196bc4bcb44</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function ($scope, $http) {
+    /* widget controller */
+    var c = this;
+    $scope.users = [];
+    $http.get('api/now/stats/sys_user?sysparm_count=true').then(function (responseUserCount) {
+        if (responseUserCount.status == 200) {
+            $scope.totalUsers = responseUserCount.data.result.stats.count;
+        }
+    });
+    $scope.usersPerPage = 10;
+    getResultsPage(1);
+
+    $scope.pagination = {
+        current: 1
+    };
+
+    $scope.pageChanged = function (newPage) {
+        getResultsPage(newPage);
+    };
+
+    function getResultsPage(pageNumber) {
+        var offset = ($scope.usersPerPage * pageNumber) - $scope.usersPerPage;
+        $http.get('api/now/table/sys_user?sysparm_limit=' + $scope.usersPerPage + '&amp;sysparm_offset=' + offset).then(function (responseUsers) {
+            if (responseUsers.status == 200) {
+                $scope.users = responseUsers.data.result;
+            }
+        });
+    }
+};]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;ngrepeat-pagination_async&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]&gt;&lt;/link&gt;&lt;name&gt;ngrepeat pagination async&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;true&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-08-04 16:25:03&lt;/sys_created_on&gt;&lt;sys_id&gt;17f79f671b5a1c100f7d4196bc4bcb44&lt;/sys_id&gt;&lt;sys_mod_count&gt;17&lt;/sys_mod_count&gt;&lt;sys_name&gt;ngrepeat pagination async&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_17f79f671b5a1c100f7d4196bc4bcb44&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-08-04 16:51:07&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+  &lt;table border="1"&gt;
+    &lt;tr&gt;
+    &lt;th&gt;Username&lt;/th&gt;
+    &lt;th&gt;Email&lt;/th&gt;
+  &lt;/tr&gt;
+   &lt;tr dir-paginate="user in users | itemsPerPage: usersPerPage" total-items="totalUsers" current-page="pagination.current" pagination-id="tr-users"&gt;
+        &lt;td&gt;
+          {{user.user_name}}
+        &lt;/td&gt;
+     	&lt;td&gt; {{user.email}}
+        &lt;/td&gt; 
+    &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;dir-pagination-controls pagination-id="tr-users" on-page-change="pageChanged(newPageNumber)"&gt;&lt;/dir-pagination-controls&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1205625074</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>0972e3a31b9a1c100f7d4196bc4bcbcd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba623ebe0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngrepeat pagination async</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid>e9a02ba7059a1c1035005ca4760e9192</update_guid>
+<update_guid_history>e9a02ba7059a1c1035005ca4760e9192:-1205625074,0fef1be37a9a1c10520fd863316a0bb0:1429520596,e7ee1ba3bf9a1c1056c909a2078b9da7:264455396,f1ce97a3349a1c103ff21c355df0e921:-849920271,b0ae1f63559a1c10529aeed3deb8f49e:-2051157914,998e1ba3159a1c10e77dafda562dde89:1458684261,7a3edf639d9a1c1036175e97cd25ec9a:-201966458,8d1edf231f9a1c108ddccd643664a769:-1508700935,beed5763519a1c10d1df321f84df0ee4:-869422465,8acd5f23369a1c101906176f7868334b:-207589757,049d9b23f49a1c101b85f224701698cd:-1548721296,4aac9fafed5a1c1095fc5fcdf4bdafdd:-894346113,84acdf6ff65a1c10dd66743d41e907bc:-739584234,9d8c9baffa5a1c105d6bd3b695bc1e8a:-2063388918,530c9b6f045a1c10bf13a8046b4bedf6:2110516850,c40c936fa65a1c10063e823199f34c20:398635177,ddab1f6b245a1c107c6edde0dc3d86d5:-718588022,afaa9763035a1c10b47547ad7234bd9c:-1255175821</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>m2m_sp_dependency_js_include_296c97af1b5a1c100f7d4196bc4bcbc4</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include"><m2m_sp_dependency_js_include action="INSERT_OR_UPDATE"><order>100</order><sp_dependency display_value="ngDirPagination">943cdf6f1b5a1c100f7d4196bc4bcba3</sp_dependency><sp_js_include display_value="ngDirPaginationJS">f24c93af1b5a1c100f7d4196bc4bcbdb</sp_js_include><sys_class_name>m2m_sp_dependency_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-08-04 16:32:33</sys_created_on><sys_id>296c97af1b5a1c100f7d4196bc4bcbc4</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngDirPagination.ngDirPaginationJS</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>m2m_sp_dependency_js_include_296c97af1b5a1c100f7d4196bc4bcbc4</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-08-04 16:32:33</sys_updated_on></m2m_sp_dependency_js_include></record_update>]]></payload>
+<payload_hash>1507356062</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>4572e3a31b9a1c100f7d4196bc4bcbcc</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba513fff0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngDirPagination.ngDirPaginationJS</target_name>
+<type>Dependency JS Includes</type>
+<update_domain>global</update_domain>
+<update_guid>296c97afdc5a1c10fc2f4c484534c1c6</update_guid>
+<update_guid_history>296c97afdc5a1c10fc2f4c484534c1c6:1507356062</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_js_include_f24c93af1b5a1c100f7d4196bc4bcbdb</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include"><sp_js_include action="INSERT_OR_UPDATE"><display_name>ngDirPaginationJS</display_name><source>local</source><sys_class_name>sp_js_include</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-08-04 16:32:33</sys_created_on><sys_id>f24c93af1b5a1c100f7d4196bc4bcbdb</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngDirPaginationJS</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_ui_script display_value="ngDirPagination">b74cd3af1b5a1c100f7d4196bc4bcb83</sys_ui_script><sys_update_name>sp_js_include_f24c93af1b5a1c100f7d4196bc4bcbdb</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-08-04 16:32:33</sys_updated_on><url/></sp_js_include></record_update>]]></payload>
+<payload_hash>-649336130</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>4572e3a31b9a1c100f7d4196bc4bcbcd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba513fbe0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngDirPaginationJS</target_name>
+<type>JS Include</type>
+<update_domain>global</update_domain>
+<update_guid>e96c97af5e5a1c105f343d0dd3ac35c3</update_guid>
+<update_guid_history>e96c97af5e5a1c105f343d0dd3ac35c3:-649336130</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_dependency_943cdf6f1b5a1c100f7d4196bc4bcba3</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency"><sp_dependency action="INSERT_OR_UPDATE"><module/><name>ngDirPagination</name><page_load>false</page_load><sp_portals/><sys_class_name>sp_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-08-04 16:31:46</sys_created_on><sys_id>943cdf6f1b5a1c100f7d4196bc4bcba3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngDirPagination</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sp_dependency_943cdf6f1b5a1c100f7d4196bc4bcba3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-08-04 16:31:46</sys_updated_on></sp_dependency></record_update>]]></payload>
+<payload_hash>-2043530119</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>8172e3a31b9a1c100f7d4196bc4bcbcd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba5088940000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngDirPagination</target_name>
+<type>Widget Dependency</type>
+<update_domain>global</update_domain>
+<update_guid>163cd7e7dd5a1c100a19c41ecb8ecb32</update_guid>
+<update_guid_history>163cd7e7dd5a1c100a19c41ecb8ecb32:-2043530119</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_ui_script_b74cd3af1b5a1c100f7d4196bc4bcb83</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ui_script"&gt;&lt;sys_ui_script action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description/&gt;&lt;global&gt;false&lt;/global&gt;&lt;name&gt;ngDirPagination&lt;/name&gt;&lt;script&gt;&lt;![CDATA[/**
+	 * dirPagination - AngularJS module for paginating (almost) anything.
+	 *
+	 *
+	 * Credits
+	 * =======
+	 *
+	 * Daniel Tabuenca: https://groups.google.com/d/msg/angular/an9QpzqIYiM/r8v-3W1X5vcJ
+	 * for the idea on how to dynamically invoke the ng-repeat directive.
+	 *
+	 * I borrowed a couple of lines and a few attribute names from the AngularUI Bootstrap project:
+	 * https://github.com/angular-ui/bootstrap/blob/master/src/pagination/pagination.js
+	 *
+	 * Copyright 2014 Michael Bromley &lt;michael@michaelbromley.co.uk&gt;
+	 */
+	
+	(function() {
+	
+	    /**
+	     * Config
+	     */
+	    var moduleName = 'angularUtils.directives.dirPagination';
+	    var DEFAULT_ID = '__default';
+	
+	    /**
+	     * Module
+	     */
+	    angular.module(moduleName, [])
+	        .directive('dirPaginate', ['$compile', '$parse', 'paginationService', dirPaginateDirective])
+	        .directive('dirPaginateNoCompile', noCompileDirective)
+	        .directive('dirPaginationControls', ['paginationService', 'paginationTemplate', dirPaginationControlsDirective])
+	        .filter('itemsPerPage', ['paginationService', itemsPerPageFilter])
+	        .service('paginationService', paginationService)
+	        .provider('paginationTemplate', paginationTemplateProvider)
+	        .run(['$templateCache',dirPaginationControlsTemplateInstaller]);
+	
+	    function dirPaginateDirective($compile, $parse, paginationService) {
+	
+	        return  {
+	            terminal: true,
+	            multiElement: true,
+	            priority: 100,
+	            compile: dirPaginationCompileFn
+	        };
+	
+	        function dirPaginationCompileFn(tElement, tAttrs){
+	
+	            var expression = tAttrs.dirPaginate;
+	            // regex taken directly from https://github.com/angular/angular.js/blob/v1.4.x/src/ng/directive/ngRepeat.js#L339
+	            var match = expression.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+as\s+([\s\S]+?))?(?:\s+track\s+by\s+([\s\S]+?))?\s*$/);
+	
+	            var filterPattern = /\|\s*itemsPerPage\s*:\s*(.*\(\s*\w*\)|([^\)]*?(?=\s+as\s+))|[^\)]*)/;
+	            if (match[2].match(filterPattern) === null) {
+	                throw 'pagination directive: the \'itemsPerPage\' filter must be set.';
+	            }
+	            var itemsPerPageFilterRemoved = match[2].replace(filterPattern, '');
+	            var collectionGetter = $parse(itemsPerPageFilterRemoved);
+	
+	            addNoCompileAttributes(tElement);
+	
+	            // If any value is specified for paginationId, we register the un-evaluated expression at this stage for the benefit of any
+	            // dir-pagination-controls directives that may be looking for this ID.
+	            var rawId = tAttrs.paginationId || DEFAULT_ID;
+	            paginationService.registerInstance(rawId);
+	
+	            return function dirPaginationLinkFn(scope, element, attrs){
+	
+	                // Now that we have access to the `scope` we can interpolate any expression given in the paginationId attribute and
+	                // potentially register a new ID if it evaluates to a different value than the rawId.
+	                var paginationId = $parse(attrs.paginationId)(scope) || attrs.paginationId || DEFAULT_ID;
+	                
+	                // (TODO: this seems sound, but I'm reverting as many bug reports followed it's introduction in 0.11.0.
+	                // Needs more investigation.)
+	                // In case rawId != paginationId we deregister using rawId for the sake of general cleanliness
+	                // before registering using paginationId
+	                // paginationService.deregisterInstance(rawId);
+	                paginationService.registerInstance(paginationId);
+	
+	                var repeatExpression = getRepeatExpression(expression, paginationId);
+	                addNgRepeatToElement(element, attrs, repeatExpression);
+	
+	                removeTemporaryAttributes(element);
+	                var compiled =  $compile(element);
+	
+	                var currentPageGetter = makeCurrentPageGetterFn(scope, attrs, paginationId);
+	                paginationService.setCurrentPageParser(paginationId, currentPageGetter, scope);
+	
+	                if (typeof attrs.totalItems !== 'undefined') {
+	                    paginationService.setAsyncModeTrue(paginationId);
+	                    scope.$watch(function() {
+	                        return $parse(attrs.totalItems)(scope);
+	                    }, function (result) {
+	                        if (0 &lt;= result) {
+	                            paginationService.setCollectionLength(paginationId, result);
+	                        }
+	                    });
+	                } else {
+	                    paginationService.setAsyncModeFalse(paginationId);
+	                    scope.$watchCollection(function() {
+	                        return collectionGetter(scope);
+	                    }, function(collection) {
+	                        if (collection) {
+	                            var collectionLength = (collection instanceof Array) ? collection.length : Object.keys(collection).length;
+	                            paginationService.setCollectionLength(paginationId, collectionLength);
+	                        }
+	                    });
+	                }
+	
+	                // Delegate to the link function returned by the new compilation of the ng-repeat
+	                compiled(scope);
+	                 
+	                // (TODO: Reverting this due to many bug reports in v 0.11.0. Needs investigation as the
+	                // principle is sound)
+	                // When the scope is destroyed, we make sure to remove the reference to it in paginationService
+	                // so that it can be properly garbage collected
+	                // scope.$on('$destroy', function destroyDirPagination() {
+	                //     paginationService.deregisterInstance(paginationId);
+	                // });
+	            };
+	        }
+	
+	        /**
+	         * If a pagination id has been specified, we need to check that it is present as the second argument passed to
+	         * the itemsPerPage filter. If it is not there, we add it and return the modified expression.
+	         *
+	         * @param expression
+	         * @param paginationId
+	         * @returns {*}
+	         */
+	        function getRepeatExpression(expression, paginationId) {
+	            var repeatExpression,
+	                idDefinedInFilter = !!expression.match(/(\|\s*itemsPerPage\s*:[^|]*:[^|]*)/);
+	
+	            if (paginationId !== DEFAULT_ID &amp;&amp; !idDefinedInFilter) {
+	                repeatExpression = expression.replace(/(\|\s*itemsPerPage\s*:\s*[^|\s]*)/, "$1 : '" + paginationId + "'");
+	            } else {
+	                repeatExpression = expression;
+	            }
+	
+	            return repeatExpression;
+	        }
+	
+	        /**
+	         * Adds the ng-repeat directive to the element. In the case of multi-element (-start, -end) it adds the
+	         * appropriate multi-element ng-repeat to the first and last element in the range.
+	         * @param element
+	         * @param attrs
+	         * @param repeatExpression
+	         */
+	        function addNgRepeatToElement(element, attrs, repeatExpression) {
+	            if (element[0].hasAttribute('dir-paginate-start') || element[0].hasAttribute('data-dir-paginate-start')) {
+	                // using multiElement mode (dir-paginate-start, dir-paginate-end)
+	                attrs.$set('ngRepeatStart', repeatExpression);
+	                element.eq(element.length - 1).attr('ng-repeat-end', true);
+	            } else {
+	                attrs.$set('ngRepeat', repeatExpression);
+	            }
+	        }
+	
+	        /**
+	         * Adds the dir-paginate-no-compile directive to each element in the tElement range.
+	         * @param tElement
+	         */
+	        function addNoCompileAttributes(tElement) {
+	            angular.forEach(tElement, function(el) {
+	                if (el.nodeType === 1) {
+	                    angular.element(el).attr('dir-paginate-no-compile', true);
+	                }
+	            });
+	        }
+	
+	        /**
+	         * Removes the variations on dir-paginate (data-, -start, -end) and the dir-paginate-no-compile directives.
+	         * @param element
+	         */
+	        function removeTemporaryAttributes(element) {
+	            angular.forEach(element, function(el) {
+	                if (el.nodeType === 1) {
+	                    angular.element(el).removeAttr('dir-paginate-no-compile');
+	                }
+	            });
+	            element.eq(0).removeAttr('dir-paginate-start').removeAttr('dir-paginate').removeAttr('data-dir-paginate-start').removeAttr('data-dir-paginate');
+	            element.eq(element.length - 1).removeAttr('dir-paginate-end').removeAttr('data-dir-paginate-end');
+	        }
+	
+	        /**
+	         * Creates a getter function for the current-page attribute, using the expression provided or a default value if
+	         * no current-page expression was specified.
+	         *
+	         * @param scope
+	         * @param attrs
+	         * @param paginationId
+	         * @returns {*}
+	         */
+	        function makeCurrentPageGetterFn(scope, attrs, paginationId) {
+	            var currentPageGetter;
+	            if (attrs.currentPage) {
+	                currentPageGetter = $parse(attrs.currentPage);
+	            } else {
+	                // If the current-page attribute was not set, we'll make our own.
+	                // Replace any non-alphanumeric characters which might confuse
+	                // the $parse service and give unexpected results.
+	                // See https://github.com/michaelbromley/angularUtils/issues/233
+	                // Adding the '_' as a prefix resolves an issue where paginationId might be have a digit as its first char
+	                // See https://github.com/michaelbromley/angularUtils/issues/400
+	                var defaultCurrentPage = '_' + (paginationId + '__currentPage').replace(/\W/g, '_');
+	                scope[defaultCurrentPage] = 1;
+	                currentPageGetter = $parse(defaultCurrentPage);
+	            }
+	            return currentPageGetter;
+	        }
+	    }
+	
+	    /**
+	     * This is a helper directive that allows correct compilation when in multi-element mode (ie dir-paginate-start, dir-paginate-end).
+	     * It is dynamically added to all elements in the dir-paginate compile function, and it prevents further compilation of
+	     * any inner directives. It is then removed in the link function, and all inner directives are then manually compiled.
+	     */
+	    function noCompileDirective() {
+	        return {
+	            priority: 5000,
+	            terminal: true
+	        };
+	    }
+	
+	    function dirPaginationControlsTemplateInstaller($templateCache) {
+	        $templateCache.put('angularUtils.directives.dirPagination.template', '&lt;ul class="pagination" ng-if="1 &lt; pages.length || !autoHide"&gt;&lt;li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }"&gt;&lt;a href="" ng-click="setCurrent(1)"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;&lt;li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }"&gt;&lt;a href="" ng-click="setCurrent(pagination.current - 1)"&gt;&amp;lsaquo;&lt;/a&gt;&lt;/li&gt;&lt;li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == \'...\' || ( ! autoHide &amp;&amp; pages.length === 1 ) }"&gt;&lt;a href="" ng-click="setCurrent(pageNumber)"&gt;{{ pageNumber }}&lt;/a&gt;&lt;/li&gt;&lt;li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }"&gt;&lt;a href="" ng-click="setCurrent(pagination.current + 1)"&gt;&amp;rsaquo;&lt;/a&gt;&lt;/li&gt;&lt;li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }"&gt;&lt;a href="" ng-click="setCurrent(pagination.last)"&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;');
+	    }
+	
+	    function dirPaginationControlsDirective(paginationService, paginationTemplate) {
+	
+	        var numberRegex = /^\d+$/;
+	
+	        var DDO = {
+	            restrict: 'AE',
+	            scope: {
+	                maxSize: '=?',
+	                onPageChange: '&amp;?',
+	                paginationId: '=?',
+	                autoHide: '=?'
+	            },
+	            link: dirPaginationControlsLinkFn
+	        };
+	
+	        // We need to check the paginationTemplate service to see whether a template path or
+	        // string has been specified, and add the `template` or `templateUrl` property to
+	        // the DDO as appropriate. The order of priority to decide which template to use is
+	        // (highest priority first):
+	        // 1. paginationTemplate.getString()
+	        // 2. attrs.templateUrl
+	        // 3. paginationTemplate.getPath()
+	        var templateString = paginationTemplate.getString();
+	        if (templateString !== undefined) {
+	            DDO.template = templateString;
+	        } else {
+	            DDO.templateUrl = function(elem, attrs) {
+	                return attrs.templateUrl || paginationTemplate.getPath();
+	            };
+	        }
+	        return DDO;
+	
+	        function dirPaginationControlsLinkFn(scope, element, attrs) {
+	
+	            // rawId is the un-interpolated value of the pagination-id attribute. This is only important when the corresponding dir-paginate directive has
+	            // not yet been linked (e.g. if it is inside an ng-if block), and in that case it prevents this controls directive from assuming that there is
+	            // no corresponding dir-paginate directive and wrongly throwing an exception.
+	            var rawId = attrs.paginationId ||  DEFAULT_ID;
+	            var paginationId = scope.paginationId || attrs.paginationId ||  DEFAULT_ID;
+	
+	            if (!paginationService.isRegistered(paginationId) &amp;&amp; !paginationService.isRegistered(rawId)) {
+	                var idMessage = (paginationId !== DEFAULT_ID) ? ' (id: ' + paginationId + ') ' : ' ';
+	                if (window.console) {
+	                    console.warn('Pagination directive: the pagination controls' + idMessage + 'cannot be used without the corresponding pagination directive, which was not found at link time.');
+	                }
+	            }
+	
+	            if (!scope.maxSize) { scope.maxSize = 9; }
+	            scope.autoHide = scope.autoHide === undefined ? true : scope.autoHide;
+	            scope.directionLinks = angular.isDefined(attrs.directionLinks) ? scope.$parent.$eval(attrs.directionLinks) : true;
+	            scope.boundaryLinks = angular.isDefined(attrs.boundaryLinks) ? scope.$parent.$eval(attrs.boundaryLinks) : false;
+	
+	            var paginationRange = Math.max(scope.maxSize, 5);
+	            scope.pages = [];
+	            scope.pagination = {
+	                last: 1,
+	                current: 1
+	            };
+	            scope.range = {
+	                lower: 1,
+	                upper: 1,
+	                total: 1
+	            };
+	
+	            scope.$watch('maxSize', function(val) {
+	                if (val) {
+	                    paginationRange = Math.max(scope.maxSize, 5);
+	                    generatePagination();
+	                }
+	            });
+	
+	            scope.$watch(function() {
+	                if (paginationService.isRegistered(paginationId)) {
+	                    return (paginationService.getCollectionLength(paginationId) + 1) * paginationService.getItemsPerPage(paginationId);
+	                }
+	            }, function(length) {
+	                if (0 &lt; length) {
+	                    generatePagination();
+	                }
+	            });
+	
+	            scope.$watch(function() {
+	                if (paginationService.isRegistered(paginationId)) {
+	                    return (paginationService.getItemsPerPage(paginationId));
+	                }
+	            }, function(current, previous) {
+	                if (current != previous &amp;&amp; typeof previous !== 'undefined') {
+	                    goToPage(scope.pagination.current);
+	                }
+	            });
+	
+	            scope.$watch(function() {
+	                if (paginationService.isRegistered(paginationId)) {
+	                    return paginationService.getCurrentPage(paginationId);
+	                }
+	            }, function(currentPage, previousPage) {
+	                if (currentPage != previousPage) {
+	                    goToPage(currentPage);
+	                }
+	            });
+	
+	            scope.setCurrent = function(num) {
+	                if (paginationService.isRegistered(paginationId) &amp;&amp; isValidPageNumber(num)) {
+	                    num = parseInt(num, 10);
+	                    paginationService.setCurrentPage(paginationId, num);
+	                }
+	            };
+	
+	            /**
+	             * Custom "track by" function which allows for duplicate "..." entries on long lists,
+	             * yet fixes the problem of wrongly-highlighted links which happens when using
+	             * "track by $index" - see https://github.com/michaelbromley/angularUtils/issues/153
+	             * @param id
+	             * @param index
+	             * @returns {string}
+	             */
+	            scope.tracker = function(id, index) {
+	                return id + '_' + index;
+	            };
+	
+	            function goToPage(num) {
+	                if (paginationService.isRegistered(paginationId) &amp;&amp; isValidPageNumber(num)) {
+	                    var oldPageNumber = scope.pagination.current;
+	
+	                    scope.pages = generatePagesArray(num, paginationService.getCollectionLength(paginationId), paginationService.getItemsPerPage(paginationId), paginationRange);
+	                    scope.pagination.current = num;
+	                    updateRangeValues();
+	
+	                    // if a callback has been set, then call it with the page number as the first argument
+	                    // and the previous page number as a second argument
+	                    if (scope.onPageChange) {
+	                        scope.onPageChange({
+	                            newPageNumber : num,
+	                            oldPageNumber : oldPageNumber
+	                        });
+	                    }
+	                }
+	            }
+	
+	            function generatePagination() {
+	                if (paginationService.isRegistered(paginationId)) {
+	                    var page = parseInt(paginationService.getCurrentPage(paginationId)) || 1;
+	                    scope.pages = generatePagesArray(page, paginationService.getCollectionLength(paginationId), paginationService.getItemsPerPage(paginationId), paginationRange);
+	                    scope.pagination.current = page;
+	                    scope.pagination.last = scope.pages[scope.pages.length - 1];
+	                    if (scope.pagination.last &lt; scope.pagination.current) {
+	                        scope.setCurrent(scope.pagination.last);
+	                    } else {
+	                        updateRangeValues();
+	                    }
+	                }
+	            }
+	
+	            /**
+	             * This function updates the values (lower, upper, total) of the `scope.range` object, which can be used in the pagination
+	             * template to display the current page range, e.g. "showing 21 - 40 of 144 results";
+	             */
+	            function updateRangeValues() {
+	                if (paginationService.isRegistered(paginationId)) {
+	                    var currentPage = paginationService.getCurrentPage(paginationId),
+	                        itemsPerPage = paginationService.getItemsPerPage(paginationId),
+	                        totalItems = paginationService.getCollectionLength(paginationId);
+	
+	                    scope.range.lower = (currentPage - 1) * itemsPerPage + 1;
+	                    scope.range.upper = Math.min(currentPage * itemsPerPage, totalItems);
+	                    scope.range.total = totalItems;
+	                }
+	            }
+	            function isValidPageNumber(num) {
+	                return (numberRegex.test(num) &amp;&amp; (0 &lt; num &amp;&amp; num &lt;= scope.pagination.last));
+	            }
+	        }
+	
+	        /**
+	         * Generate an array of page numbers (or the '...' string) which is used in an ng-repeat to generate the
+	         * links used in pagination
+	         *
+	         * @param currentPage
+	         * @param rowsPerPage
+	         * @param paginationRange
+	         * @param collectionLength
+	         * @returns {Array}
+	         */
+	        function generatePagesArray(currentPage, collectionLength, rowsPerPage, paginationRange) {
+	            var pages = [];
+	            var totalPages = Math.ceil(collectionLength / rowsPerPage);
+	            var halfWay = Math.ceil(paginationRange / 2);
+	            var position;
+	
+	            if (currentPage &lt;= halfWay) {
+	                position = 'start';
+	            } else if (totalPages - halfWay &lt; currentPage) {
+	                position = 'end';
+	            } else {
+	                position = 'middle';
+	            }
+	
+	            var ellipsesNeeded = paginationRange &lt; totalPages;
+	            var i = 1;
+	            while (i &lt;= totalPages &amp;&amp; i &lt;= paginationRange) {
+	                var pageNumber = calculatePageNumber(i, currentPage, paginationRange, totalPages);
+	
+	                var openingEllipsesNeeded = (i === 2 &amp;&amp; (position === 'middle' || position === 'end'));
+	                var closingEllipsesNeeded = (i === paginationRange - 1 &amp;&amp; (position === 'middle' || position === 'start'));
+	                if (ellipsesNeeded &amp;&amp; (openingEllipsesNeeded || closingEllipsesNeeded)) {
+	                    pages.push('...');
+	                } else {
+	                    pages.push(pageNumber);
+	                }
+	                i ++;
+	            }
+	            return pages;
+	        }
+	
+	        /**
+	         * Given the position in the sequence of pagination links [i], figure out what page number corresponds to that position.
+	         *
+	         * @param i
+	         * @param currentPage
+	         * @param paginationRange
+	         * @param totalPages
+	         * @returns {*}
+	         */
+	        function calculatePageNumber(i, currentPage, paginationRange, totalPages) {
+	            var halfWay = Math.ceil(paginationRange/2);
+	            if (i === paginationRange) {
+	                return totalPages;
+	            } else if (i === 1) {
+	                return i;
+	            } else if (paginationRange &lt; totalPages) {
+	                if (totalPages - halfWay &lt; currentPage) {
+	                    return totalPages - paginationRange + i;
+	                } else if (halfWay &lt; currentPage) {
+	                    return currentPage - halfWay + i;
+	                } else {
+	                    return i;
+	                }
+	            } else {
+	                return i;
+	            }
+	        }
+	    }
+	
+	    /**
+	     * This filter slices the collection into pages based on the current page number and number of items per page.
+	     * @param paginationService
+	     * @returns {Function}
+	     */
+	    function itemsPerPageFilter(paginationService) {
+	
+	        return function(collection, itemsPerPage, paginationId) {
+	            if (typeof (paginationId) === 'undefined') {
+	                paginationId = DEFAULT_ID;
+	            }
+	            if (!paginationService.isRegistered(paginationId)) {
+	                throw 'pagination directive: the itemsPerPage id argument (id: ' + paginationId + ') does not match a registered pagination-id.';
+	            }
+	            var end;
+	            var start;
+	            if (angular.isObject(collection)) {
+	                itemsPerPage = parseInt(itemsPerPage) || 9999999999;
+	                if (paginationService.isAsyncMode(paginationId)) {
+	                    start = 0;
+	                } else {
+	                    start = (paginationService.getCurrentPage(paginationId) - 1) * itemsPerPage;
+	                }
+	                end = start + itemsPerPage;
+	                paginationService.setItemsPerPage(paginationId, itemsPerPage);
+	
+	                if (collection instanceof Array) {
+	                    // the array just needs to be sliced
+	                    return collection.slice(start, end);
+	                } else {
+	                    // in the case of an object, we need to get an array of keys, slice that, then map back to
+	                    // the original object.
+	                    var slicedObject = {};
+	                    angular.forEach(keys(collection).slice(start, end), function(key) {
+	                        slicedObject[key] = collection[key];
+	                    });
+	                    return slicedObject;
+	                }
+	            } else {
+	                return collection;
+	            }
+	        };
+	    }
+	
+	    /**
+	     * Shim for the Object.keys() method which does not exist in IE &lt; 9
+	     * @param obj
+	     * @returns {Array}
+	     */
+	    function keys(obj) {
+	        if (!Object.keys) {
+	            var objKeys = [];
+	            for (var i in obj) {
+	                if (obj.hasOwnProperty(i)) {
+	                    objKeys.push(i);
+	                }
+	            }
+	            return objKeys;
+	        } else {
+	            return Object.keys(obj);
+	        }
+	    }
+	
+	    /**
+	     * This service allows the various parts of the module to communicate and stay in sync.
+	     */
+	    function paginationService() {
+	
+	        var instances = {};
+	        var lastRegisteredInstance;
+	
+	        this.registerInstance = function(instanceId) {
+	            if (typeof instances[instanceId] === 'undefined') {
+	                instances[instanceId] = {
+	                    asyncMode: false
+	                };
+	                lastRegisteredInstance = instanceId;
+	            }
+	        };
+	
+	        this.deregisterInstance = function(instanceId) {
+	            delete instances[instanceId];
+	        };
+	        
+	        this.isRegistered = function(instanceId) {
+	            return (typeof instances[instanceId] !== 'undefined');
+	        };
+	
+	        this.getLastInstanceId = function() {
+	            return lastRegisteredInstance;
+	        };
+	
+	        this.setCurrentPageParser = function(instanceId, val, scope) {
+	            instances[instanceId].currentPageParser = val;
+	            instances[instanceId].context = scope;
+	        };
+	        this.setCurrentPage = function(instanceId, val) {
+	            instances[instanceId].currentPageParser.assign(instances[instanceId].context, val);
+	        };
+	        this.getCurrentPage = function(instanceId) {
+	            var parser = instances[instanceId].currentPageParser;
+	            return parser ? parser(instances[instanceId].context) : 1;
+	        };
+	
+	        this.setItemsPerPage = function(instanceId, val) {
+	            instances[instanceId].itemsPerPage = val;
+	        };
+	        this.getItemsPerPage = function(instanceId) {
+	            return instances[instanceId].itemsPerPage;
+	        };
+	
+	        this.setCollectionLength = function(instanceId, val) {
+	            instances[instanceId].collectionLength = val;
+	        };
+	        this.getCollectionLength = function(instanceId) {
+	            return instances[instanceId].collectionLength;
+	        };
+	
+	        this.setAsyncModeTrue = function(instanceId) {
+	            instances[instanceId].asyncMode = true;
+	        };
+	
+	        this.setAsyncModeFalse = function(instanceId) {
+	            instances[instanceId].asyncMode = false;
+	        };
+	
+	        this.isAsyncMode = function(instanceId) {
+	            return instances[instanceId].asyncMode;
+	        };
+	    }
+	
+	    /**
+	     * This provider allows global configuration of the template path used by the dir-pagination-controls directive.
+	     */
+	    function paginationTemplateProvider() {
+	
+	        var templatePath = 'angularUtils.directives.dirPagination.template';
+	        var templateString;
+	
+	        /**
+	         * Set a templateUrl to be used by all instances of &lt;dir-pagination-controls&gt;
+	         * @param {String} path
+	         */
+	        this.setPath = function(path) {
+	            templatePath = path;
+	        };
+	
+	        /**
+	         * Set a string of HTML to be used as a template by all instances
+	         * of &lt;dir-pagination-controls&gt;. If both a path *and* a string have been set,
+	         * the string takes precedence.
+	         * @param {String} str
+	         */
+	        this.setString = function(str) {
+	            templateString = str;
+	        };
+	
+	        this.$get = function() {
+	            return {
+	                getPath: function() {
+	                    return templatePath;
+	                },
+	                getString: function() {
+	                    return templateString;
+	                }
+	            };
+	        };
+	    }
+	})();]]&gt;&lt;/script&gt;&lt;script_name/&gt;&lt;sys_class_name&gt;sys_ui_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2020-08-04 16:32:17&lt;/sys_created_on&gt;&lt;sys_id&gt;b74cd3af1b5a1c100f7d4196bc4bcb83&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;ngDirPagination&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ui_script_b74cd3af1b5a1c100f7d4196bc4bcb83&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2020-08-04 16:32:17&lt;/sys_updated_on&gt;&lt;ui_type&gt;1&lt;/ui_type&gt;&lt;use_scoped_format&gt;false&lt;/use_scoped_format&gt;&lt;/sys_ui_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>358401165</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>c972e3a31b9a1c100f7d4196bc4bcbcd</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba5102140000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngDirPagination</target_name>
+<type>UI Script</type>
+<update_domain>global</update_domain>
+<update_guid>b15c17af255a1c1037a8799c2818d4b9</update_guid>
+<update_guid_history>b15c17af255a1c1037a8799c2818d4b9:358401165</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>m2m_sp_widget_dependency_523cd7e71b5a1c100f7d4196bc4bcb33</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="ngDirPagination">943cdf6f1b5a1c100f7d4196bc4bcba3</sp_dependency><sp_widget display_value="ngrepeat pagination async">17f79f671b5a1c100f7d4196bc4bcb44</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-08-04 16:31:46</sys_created_on><sys_id>523cd7e71b5a1c100f7d4196bc4bcb33</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ngDirPagination.ngrepeat pagination async</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>m2m_sp_widget_dependency_523cd7e71b5a1c100f7d4196bc4bcb33</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-08-04 16:31:46</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+<payload_hash>-101980953</payload_hash>
+<remote_update_set display_value="Service Portal TR pagination async">0172e3a31b9a1c100f7d4196bc4bcbcc</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2020-08-04 16:59:00</sys_created_on>
+<sys_id>cd72e3a31b9a1c100f7d4196bc4bcbcc</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>173ba5088ea0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2020-08-04 16:59:00</sys_updated_on>
+<table/>
+<target_name>ngDirPagination.ngrepeat pagination async</target_name>
+<type>Widget Dependency</type>
+<update_domain>global</update_domain>
+<update_guid>9e3c13af835a1c10bcbcbd6df6a41789</update_guid>
+<update_guid_history>9e3c13af835a1c10bcbcbd6df6a41789:-101980953</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
