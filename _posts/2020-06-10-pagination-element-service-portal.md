@@ -27,9 +27,10 @@ Firstly html part:
   </tr>
    <tr dir-paginate="user in users | itemsPerPage: usersPerPage" total-items="totalUsers" current-page="pagination.current" pagination-id="tr-users">
         <td>
-          {{user.user_name}}
+          {% raw %}{{user.user_name}}{% endraw %}
         </td>
-     	<td> {{user.email}}
+     	<td> 
+         {% raw %}{{user.email}}{% endraw %}
         </td> 
     </tr>
     </table>
