@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+<link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
