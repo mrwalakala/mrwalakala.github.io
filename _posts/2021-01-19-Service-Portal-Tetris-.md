@@ -14,7 +14,7 @@ Here ([https://github.com/mrwalakala/SP-Tetris]) you can find the whole package,
 
 The scoreboard will also be implemented soon!
 
-<img src="/assets/service-portal-tetris-00.png" alt="service portal tetris" width="75%"/>
+<img src="/assets/service-portal-tetris-00.png" alt="service portal tetris" width="35%"/>
 
 
 [blockrainjs]: https://github.com/Aerolab/blockrain.js
