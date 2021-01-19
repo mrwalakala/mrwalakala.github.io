@@ -6,7 +6,7 @@ category: ["ServiceNow", "Service Portal", "Tetris"]
 permalink: service-portal-tetris
 
 ---
-Arkanoir on the page dedicated to 404 is a classic, but why not replace it with the equally classic tetris?
+Arkanoid on the page dedicated to 404 is a classic, but why not replace it with the equally classic tetris?
 
 The version of tetris that will be used is [Blockrain.js][blockrainjs], a JavaScript clone of Tetris.
 
