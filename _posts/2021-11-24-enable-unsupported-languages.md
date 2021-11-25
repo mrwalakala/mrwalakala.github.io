@@ -7,7 +7,7 @@ permalink: enable-unsupported-languages
 
 ---
 
-Let's start with an important distinction: if the language you are interested is [one of this in the list][i18n-plugin-language], all you have to do is install the dedicated plugin and you won't need to do anything else.
+Let's start with an important distinction: if the language you are interested in is [one of this in the list][i18n-plugin-language], all you have to do is installing the dedicated plugin and you won't need to do anything else.
 
 
 
@@ -43,13 +43,13 @@ Value --> <em>two-character language code</em>
 <img src="/assets/enable-unsupported-languages-01.png" alt="" width="25%"/>
 
 
-In this way, the new language can be chosen at login or set for the individual user.
+This way, the new language can be chosen at login or set for the individual user.
 
 
 <img src="/assets/enable-unsupported-languages-03.png" alt="" width="25%"/>
 
 
-Users will now be able to choose the new language, but it is necessary to enter the translations in the new language. If there are no translations, they will be shown in English.
+Users will now be able to choose the new language, but it is necessary to insert the translations in the new language. If there are no translations, they will be shown in English.
 
 <br>
 The texts to be translated are listed in these tables:
