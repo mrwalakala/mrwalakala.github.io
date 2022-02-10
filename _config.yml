@@ -32,7 +32,7 @@ plainwhite:
   name: Alberto Colombo
   tagline: Tech Enthusiast.
   date_format: "%b %-d, %Y"
-  analytics_id: "UA-132440084-1"
+# analytics_id: "UA-132440084-1"
   sitemap: true
   dark_mode: false
   show_excerpts: true
