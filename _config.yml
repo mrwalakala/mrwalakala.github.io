@@ -26,7 +26,6 @@ permalink: /:title
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
 
 plainwhite:
   name: Alberto Colombo
