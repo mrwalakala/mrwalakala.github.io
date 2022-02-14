@@ -38,8 +38,7 @@ plainwhite:
   portfolio_image:  "assets/portfolio.png"
 
   social_links:
-    github: mrwalakala
-    linkedIn: in/albcol # format: locale/username
+    linkedIn: lu/albcol # format: locale/username
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
