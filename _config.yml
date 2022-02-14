@@ -21,7 +21,7 @@ remote_theme: samarsault/plainwhite-jekyll
 
 # Build settings
 markdown: kramdown
-theme: plainwhite
+# theme: plainwhite
 permalink: /:title
 plugins:
   - jekyll-feed
