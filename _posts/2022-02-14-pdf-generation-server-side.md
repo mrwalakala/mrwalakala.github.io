@@ -18,6 +18,12 @@ Around this method I have created this simple scope application that allows you 
 - Using a dynamic mapping between PDF fields and fields on the table
 - Create the filled PDF file via UI Action on Workspace/NextExperience/UI16
 
+After the installation you'll find:
+- PDF Template table, with one demo data related for incident
+- UI Action "Generate PDF from template" on incident table
+
+To use it on new table you need to define a new record on PDF Template, upload the PDF template on the new record and create a new UI Action, like the existing one on incident table.
+
 Here the link to the repository  --> [https://github.com/mrwalakala/sn-pdfgeneration][github-link]
 
 <img src="/assets/pdf-generation-server-side-00.gif" alt="" />
