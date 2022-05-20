@@ -17,11 +17,11 @@ title: Kofko Blog
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.kofko.xyz" # the base hostname & protocol for your site, e.g. http://example.com
-remote_theme: samarsault/plainwhite-jekyll
+#remote_theme: samarsault/plainwhite-jekyll
 
 # Build settings
 markdown: kramdown
-# theme: plainwhite
+theme: plainwhite
 permalink: /:title
 plugins:
   - jekyll-feed
