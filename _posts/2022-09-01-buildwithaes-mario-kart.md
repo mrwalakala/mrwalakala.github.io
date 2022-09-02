@@ -7,7 +7,7 @@ permalink: buildwithaes-mario-kart
 
 ---
 
-Hey, I'm here for [sn-community][#buildwithaes] too!
+Hey, I'm here for [#buildwithaes][sn-community] too!
 
 But... what is AES? 
 AES is a development tool for creators, regardless the skills level.
@@ -40,7 +40,7 @@ To make data entry easier, I also created three catalogue items, again via aes. 
 
 <img src="/assets/buildwithaes-03.png" alt="" />
 
-The catalogue item "Register as participant" has a special feature, it is public! I followed the KB [sn-kb][KB0681861]
+The catalogue item "Register as participant" has a special feature, it is public! I followed the KB [KB0681861][sn-kb]
 
 This way, users not in ServiceNow can also join the tournament.
 
@@ -63,7 +63,7 @@ These are some functions that would be cool to implement:
 - Mobile Application and upload photo of the result
 - Set-up full tournament setup and score calculation
 
-You can access the code here [github-link][https://github.com/mrwalakala/sn-mktracker]
+You can access the code here [https://github.com/mrwalakala/sn-mktracker][github-link]
 
 [sn-community]: https://community.servicenow.com/community?id=community_blog&sys_id=8ea8e43f1bb81d10b09633f2cd4bcb8f&view_source=featuredList
 [sn-kb]: https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0681861
