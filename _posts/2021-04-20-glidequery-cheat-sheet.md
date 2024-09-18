@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "GlideQuery Cheat Sheet"
-date:   2021-04-20 11:22:29 +0100
+date:   2099-04-20 11:22:29 +0100
 category: ["ServiceNow", "GlideQuery"]
 permalink: glidequery-cheat-sheet
 
