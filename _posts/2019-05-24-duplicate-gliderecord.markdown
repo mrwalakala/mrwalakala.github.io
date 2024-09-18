@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Duplicate GlideRecord"
-date:   2019-05-24 19:01:00 +0100
+date:   2099-05-24 19:01:00 +0100
 category: ["ServiceNow", "GlideRecord"]
 permalink: duplicate-gliderecord
 ---
