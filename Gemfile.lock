@@ -73,7 +73,7 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2021.1)
       tzinfo (>= 1.0.0)
-    webrick (1.7.0)
+    webrick (1.8.2)
 
 PLATFORMS
   x64-mingw32
@@ -90,7 +90,7 @@ DEPENDENCIES
   plainwhite
   rexml (>= 3.2.5)
   tzinfo-data
-  webrick (~> 1.7)
+  webrick (~> 1.8)
 
 BUNDLED WITH
    2.2.32

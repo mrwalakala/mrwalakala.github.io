@@ -36,4 +36,4 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 gem "plainwhite"
 gem "addressable", ">= 2.8.0"
 
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"
